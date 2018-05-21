@@ -21,3 +21,7 @@ def full? (board)
     position_taken?(board, position)
   end
 end
+
+def draw? (board)
+  
+end
