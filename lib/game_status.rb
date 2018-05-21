@@ -17,5 +17,6 @@ def won? (board)
 end
 
 def full? (board)
-  board.all? do 
+  0...8.all do |position|
+    position_taken?(board, position)
 end
