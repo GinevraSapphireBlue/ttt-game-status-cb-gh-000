@@ -11,11 +11,9 @@ WIN_COMBINATIONS = [
   ]
   
 def won? (board)
-  WIN_COMBINATIONS.each do |combination|
+  WIN_COMBINATIONS.find do |combination|
     char_in_1st_position = board[combination[0]]
     next if char_in_1st_position != 'O' && char_in_1st_position != 'X'
-    if board[combination[0]] == board[combination[1]] && board[combination[0]] == board[combination[2]]
-      return combination
-    end
+    next if board[combination[0]] != board[combination[1]] || board[combination[0]] != board[combination[2]]
   end
 end
