@@ -11,5 +11,13 @@ WIN_COMBINATIONS = [
   ]
   
 def won? (board)
-  if board == ""
+  WIN_COMBINATIONS.each do |combination|
+    char_in_1st_position = board[combination[0]]
+    if char_in_1st_position != 'O' && char_in_1st_position != 'X'
+      continue
+    end
+    if board[combination[0]] == board[combination[1]] && board[combination[0]] == board[combination[2]]
+      return combination
+    end
+  end
 end
